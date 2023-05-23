@@ -14,7 +14,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/brand`} className="new-btn">
+          <Link to={`/marca`} className="new-btn">
             Marca
           </Link>
         </li>

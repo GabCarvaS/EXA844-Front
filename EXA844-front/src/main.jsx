@@ -13,6 +13,7 @@ import NewPost from "./routes/NewPost.jsx";
 import Ranking from "./routes/Ranking.jsx";
 import Ocurrence from "./routes/Occurrence.jsx";
 import Month from "./routes/Month.jsx";
+import Marca from "./routes/Marca.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/marca",
-        element: <Month />,
+        element: <Marca />,
       },
     ],
   },
