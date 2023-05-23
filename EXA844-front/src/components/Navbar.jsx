@@ -9,13 +9,18 @@ const Navbar = () => {
       </h2>
       <ul>
         <li>
-          <Link to={`/new`} className="new-btn">
+          <Link to={`/modelo`} className="new-btn">
             Modelo
           </Link>
         </li>
         <li>
-          <Link to={`/`} className="new-btn">
-            Mais Populares
+          <Link to={`/brand`} className="new-btn">
+            Marca
+          </Link>
+        </li>
+        <li>
+          <Link to={`/posicao`} className="new-btn">
+            Posição
           </Link>
         </li>
       </ul>

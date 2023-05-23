@@ -10,6 +10,9 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
  */
 import Home from "./routes/Home.jsx";
 import NewPost from "./routes/NewPost.jsx";
+import Ranking from "./routes/Ranking.jsx";
+import Ocurrence from "./routes/Occurrence.jsx";
+import Month from "./routes/Month.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +23,28 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/new",
+        path: "/posicao",
+        element: <Home />,
+      },
+      {
+        path: "/modelo",
         element: <NewPost />,
+      },
+      {
+        path: "/populares",
+        element: <Ocurrence />,
+      },
+      {
+        path: "/mes",
+        element: <Month />,
+      },
+      {
+        path: "/ranking/:mes",
+        element: <Ranking />,
+      },
+      {
+        path: "/marca",
+        element: <Month />,
       },
     ],
   },

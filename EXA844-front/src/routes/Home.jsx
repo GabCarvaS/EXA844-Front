@@ -33,8 +33,8 @@ const Home = () => {
         posts.map((post) => (
           <div className="post" key={post.mes}>
             <h2>{post.mes}</h2>
-            <Link to={`/posts/${post.mes}`} className="btn">
-              Ranking de Vendas
+            <Link to={`/ranking/${post.mes}`} className="btn">
+              Ver Ranking de Vendas
             </Link>
           </div>
         ))
