@@ -8,7 +8,7 @@ const Home = () => {
 
   const getPosts = async () => {
     try {
-      const response = await blogFetch.get("/month?month=Abril");
+      const response = await blogFetch.get("/cars");
 
       const data = response.data;
 
@@ -26,16 +26,15 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Carros Abril</h1>
+      <h1>Projeto EXA844</h1>
       {posts.length == 0 ? (
         <p>Carregando...</p>
       ) : (
         posts.map((post) => (
-          <div className="post" key={post.car.posicao}>
-            <h2>{post.car.modelo}</h2>
-            <p>{post.car.marca}</p>
-            <Link to={`/posts/${post.car.posicao}`} className="btn">
-              Ler mais
+          <div className="post" key={post.mes}>
+            <h2>{post.mes}</h2>
+            <Link to={`/posts/${post.mes}`} className="btn">
+              Ver mais
             </Link>
           </div>
         ))
