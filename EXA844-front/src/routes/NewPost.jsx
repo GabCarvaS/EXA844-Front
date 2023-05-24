@@ -37,7 +37,7 @@ const NewPost = () => {
 
       {tableData.length > 0 && (
         <div className="table-container">
-          <h3>Tabela de Resultados</h3>
+          <h3>Posição nº de vendas por mês</h3>
           <table className="table">
             <thead>
               <tr>

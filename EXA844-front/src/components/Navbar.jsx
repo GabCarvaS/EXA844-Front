@@ -19,8 +19,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/posicao`} className="new-btn">
-            Posição
+          <Link to={`/populares`} className="new-btn">
+            +Populares
           </Link>
         </li>
       </ul>

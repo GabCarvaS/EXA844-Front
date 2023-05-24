@@ -1,35 +1,35 @@
 import "./NewPost.css";
 import blogFetch from "../axios/config";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const NewPost = () => {
-  const [brand, setBrand] = useState("");
+  const navigate = useNavigate();
+  const [title, setTitle] = useState("");
   const [tableData, setTableData] = useState([]);
 
-  const searchByBrand = async (e) => {
+  const createPost = async (e) => {
     e.preventDefault();
-    try {
-      const response = await blogFetch.get(`/cars/brand?brand=${brand}`);
-      const data = response.data;
-      setTableData(data);
-    } catch (error) {
-      console.log(error);
-    }
+    const post = { title };
+    console.log(title);
+    const response = await blogFetch.get(`/cars/occurrence?month=${title}`);
+    const data = response.data;
+    setTableData(data);
   };
 
   return (
     <div className="new-post">
-      <h2>Buscar por Marca</h2>
-      <form onSubmit={searchByBrand}>
+      <h2>Modelos Mais Populares</h2>
+      <form onSubmit={(e) => createPost(e)}>
         <div className="form-control">
-          <label htmlFor="brand">Marca:</label>
+          <label htmlFor="model">Mês:</label>
           <input
             type="text"
-            name="brand"
-            placeholder="Informe a marca"
-            id="brand"
-            value={brand}
-            onChange={(e) => setBrand(e.target.value.toUpperCase())}
+            name="model"
+            placeholder="Informe o mês"
+            id="model"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <input type="submit" value="Buscar" className="btn" />
@@ -37,7 +37,7 @@ const NewPost = () => {
 
       {tableData.length > 0 && (
         <div className="table-container">
-          <h3>Tabela de Resultados</h3>
+          <h3>Modelos Mais Comentados</h3>
           <table className="table">
             <thead>
               <tr>
@@ -45,17 +45,17 @@ const NewPost = () => {
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Posição</th>
-                <th>Quantidade de Vendas</th>
+                <th>Quantidade de Ocorrências</th>
               </tr>
             </thead>
             <tbody>
               {tableData.map((item, index) => (
                 <tr key={index}>
                   <td>{item.mes}</td>
-                  <td>{item.cars[0].marca}</td>
-                  <td>{item.cars[0].modelo}</td>
-                  <td>{item.cars[0].posicao}</td>
-                  <td>{item.cars[0].qtdVendas}</td>
+                  <td>{item.car.marca}</td>
+                  <td>{item.car.modelo}</td>
+                  <td>{item.car.posicao}</td>
+                  <td>{item.car.qtdOcorrencias}</td>
                 </tr>
               ))}
             </tbody>

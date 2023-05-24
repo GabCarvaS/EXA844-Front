@@ -22,11 +22,11 @@ const Ranking = () => {
 
   return (
     <div className="ranking">
-      <h2>Ranking de Vendas - Mês {mes}</h2>
+      <h2>Ranking de Vendas - {mes}</h2>
 
       {tableData.length > 0 ? (
         <div className="table-container">
-          <h3>Tabela de Resultados</h3>
+          <h3>Mais Vendidos</h3>
           <table className="table">
             <thead>
               <tr>

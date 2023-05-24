@@ -36,30 +36,32 @@ const NewPost = () => {
       </form>
 
       {tableData.length > 0 && (
-        <div className="table-container">
-          <h3>Tabela de Resultados</h3>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Mês</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Posição</th>
-                <th>Quantidade de Vendas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tableData.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.mes}</td>
-                  <td>{item.cars[0].marca}</td>
-                  <td>{item.cars[0].modelo}</td>
-                  <td>{item.cars[0].posicao}</td>
-                  <td>{item.cars[0].qtdVendas}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          {tableData.map((item, index) => (
+            <div key={index} className="table-container">
+              <h3>{item.mes}</h3>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Posição</th>
+                    <th>Quantidade de Vendas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {item.cars.map((car, carIndex) => (
+                    <tr key={carIndex}>
+                      <td>{car.marca}</td>
+                      <td>{car.modelo}</td>
+                      <td>{car.posicao}</td>
+                      <td>{car.qtdVendas}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
         </div>
       )}
     </div>
