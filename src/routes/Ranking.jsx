@@ -27,10 +27,10 @@ const Ranking = () => {
       {tableData.length > 0 ? (
         <div className="table-container">
           <h3>Mais Vendidos</h3>
+          <h6>by Fenabrave</h6>
           <table className="table">
             <thead>
               <tr>
-                <th>Mês</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Posição</th>
@@ -40,7 +40,6 @@ const Ranking = () => {
             <tbody>
               {tableData.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.mes}</td>
                   <td>{item.car.marca}</td>
                   <td>{item.car.modelo}</td>
                   <td>{item.car.posicao}</td>

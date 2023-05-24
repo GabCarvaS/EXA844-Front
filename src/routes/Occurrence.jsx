@@ -41,7 +41,6 @@ const NewPost = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>Mês</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Posição</th>
@@ -51,7 +50,6 @@ const NewPost = () => {
             <tbody>
               {tableData.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.mes}</td>
                   <td>{item.car.marca}</td>
                   <td>{item.car.modelo}</td>
                   <td>{item.car.posicao}</td>
